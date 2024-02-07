@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIWAYAH - Mens Cloths</title>
     <link rel="stylesheet" href="style.css">
 
@@ -24,21 +25,22 @@
             </div>
     
             <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Products</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Account</li>
+                <ul id="MenuItems">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Account</a></li>
                 </ul>
             </nav>
             <img src="images/cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
 
 
         <div class="row">
             <div class="col-2">
-                <h1>Elevate Your Style <br> Discover Trendsetting Men's Fashion</h1>
+                <h1>Elevate Your Style <br> Discover Trend setting Men's Fashion</h1>
                 <p>Elevate your wardrobe with our curated men's fashion. From sleek suits to casual essentials, redefine your style effortlessly. Shop now at RIWAYAHA.</p>
                 <a href="" class="btn">Explore Now &#8594;</a>
             </div>
@@ -96,7 +98,7 @@
     <div class="row">
 
         <div class="col-4">
-            <img src="images/product-1.jpg">
+            <img src="images/product-12.jpg">
             <h4>Red Printed T-Shirts</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -139,7 +141,7 @@
         </div>
 
         <div class="col-4">
-            <img src="images/product-4.jpg">
+            <img src="images/product-12.jpg">
             <h4>Red Printed T-Shirts</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -172,7 +174,7 @@
         </div>
 
         <div class="col-4">
-            <img src="images/product-6.jpg">
+            <img src="images/product-5.jpg">
             <h4>Red Printed T-Shirts</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -314,7 +316,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
     
                 </div>
-                <img src="images/user-1.png" >
+                <img src="images/woman.png" >
                 <h3>Sean parker</h3>
             </div>
 
@@ -332,7 +334,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
     
                 </div>
-                <img src="images/user-2.png" >
+                <img src="images/man.png" >
                 <h3>Mike Smith</h3>
             </div>
 
@@ -349,7 +351,7 @@
                     <i class="fa fa-star-o" aria-hidden="true"></i>
     
                 </div>
-                <img src="images/user-3.png" >
+                <img src="images/boy.png" >
                 <h3>Mabel Joe</h3>
             </div>
         </div>
@@ -403,7 +405,7 @@
             </div>
 
             <div class="footer-col-2">
-                <img src="images/logo-white.png">
+                <img src="images/logo-riwayah.jpeg">
                 <p>Redefine your style effortlessly</p>
 
             </div>
@@ -435,6 +437,22 @@
     </div>
 </div>
 
+<!-- js for toggle menu -->
+<script>
+    var MenuItems  = document.getElementById("MenuItems")
+
+    MenuItems.style.maxHeight = "0px"
+    function menutoggle(){
+        if (MenuItems.style.maxHeight=="0px") {
+
+            MenuItems.style.maxHeight = "200px"
+
+        }else{
+
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+</script>
     
 </body>
 </html>
