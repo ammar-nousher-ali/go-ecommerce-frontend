@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="images/image1.png" width="100%">
+                    <img src="images/cloths1.jpg" width="100%">
                 </div>
 
 
@@ -70,9 +70,15 @@
 
                         <form id="RegForm">
 
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
+                            <input type="text" id="fname" placeholder="First Name">
+                            <input type="text" id="lname" placeholder="Last Name">
+                        
+                            <input type="email" id="email" placeholder="Email">
+
+                            <input type="password" id="password" placeholder="Password">
+                            
+                            <input type="tel" id="phone" placeholder="Phone Number">
+
                             <button type="submit" class="btn">Register</button>
                             
 
@@ -175,6 +181,53 @@
     }
 
 
+</script>
+
+<!-- ------------------------js for submit register-------------------------- -->
+
+<script>
+    document.getElementById("RegForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var phone = document.getElementById("phone").value;
+
+        // Create an object with the form data
+        var data = {
+            first_name: fname,
+            last_name : lname,
+            email: email,
+            password: password,
+            phone : phone
+        };
+
+        console.log(data)
+
+       
+        fetch("http://localhost:8000/users/signup", {
+            mode: 'no-cors',
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+            
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); 
+            alert("Registration successful!"); 
+        })
+        .catch(error => {
+            console.log(error);
+            console.error("There was a problem with the fetch operation:", error);
+            alert("Registration failed. Please try again.");
+        });
+    });
 </script>
     
 </body>
