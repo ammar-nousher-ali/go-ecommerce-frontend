@@ -616,7 +616,18 @@ form a {
 }
 
 
-
+/* about us */
+h1, h2 {
+    color: #ff523b; /* custom color */
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+p {
+    line-height: 1.6;
+}
 
 
 
